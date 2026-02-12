@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useAuth } from "@/contexts/AuthContext";
 import { api } from "@/lib/api";
@@ -47,6 +48,7 @@ export default function FormsPage() {
                 <th className="px-4 py-3 font-medium text-slate-700">Form</th>
                 <th className="px-4 py-3 font-medium text-slate-700">Booking</th>
                 <th className="px-4 py-3 font-medium text-slate-700">Status</th>
+                <th className="px-4 py-3 font-medium text-slate-700">Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -65,6 +67,15 @@ export default function FormsPage() {
                     }`}>
                       {s.status}
                     </span>
+                  </td>
+                  <td className="px-4 py-3">
+                    <Link
+                      href={`/f/form/${s.id}`}
+                      className="inline-flex items-center rounded-full border border-slate-200 px-3 py-1 text-xs font-medium text-sky-700 hover:border-sky-300 hover:bg-sky-50"
+                      target="_blank"
+                    >
+                      Open form
+                    </Link>
                   </td>
                 </tr>
               ))}
