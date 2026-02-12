@@ -67,7 +67,7 @@ export default function BookingsPage() {
             onClick={() => setStatusFilter(s)}
             className={`min-h-[40px] rounded-lg px-4 py-2 text-sm font-medium ${statusFilter === s ? "bg-sky-100 text-sky-800" : "bg-slate-100 text-slate-700"}`}
           >
-            {s === "no_show" ? "No-show" : s.charAt(0).toUpperCase() + s.slice(1)}
+            {s.charAt(0).toUpperCase() + s.slice(1)}
           </button>
         ))}
       </div>
